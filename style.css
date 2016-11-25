@@ -1,0 +1,92 @@
+@font-face{
+ font-family: "Quentin Caps";
+    src: url(font/Quentincaps.ttf)
+}
+
+@font-face{
+    font-family: "Trocadero";
+    src: url(font/Trocadero.ttf)
+}
+
+@font-face{
+    font-family: "PistolGripPump";
+    src: url(font/PistolGripPump.ttf)
+}
+
+body {
+    font-family: Calibri;
+    padding: 2em;
+    text-align: center;
+    height:100%;
+    background-image: url("img/parchemin.png");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    margin:0;
+}
+
+.layout-main{
+    height:100%;
+    width:60%;
+    margin: auto;
+}
+
+h1{
+    font-size: 2.5em;
+    font-style: normal;
+    font-weight: normal;
+    font-family: "Trocadero";
+}
+h2{
+    font-size: 1.5em;
+    font-style: normal;
+    font-weight: normal;
+    font-family: "PistolGripPump";
+}
+
+#wordToFind{
+    font-size: 1.5em;
+
+}
+form select{
+    background-color: darkgoldenrod;
+    font-size: 1em;
+    color: black;
+    padding: 0em 2.5em 0em 2.5em;
+    border-color: black;
+    text-align: center;
+    border-radius: 3px 3px;
+}
+#selector{
+    padding:10px;
+}
+
+ input{
+     padding: 2px 20px 3px 20px;
+     border-radius: 3px 3px;
+     margin: 5px;
+}
+
+ img {
+     max-width: 100%;
+     height:auto;
+ }
+
+
+@media screen and (max-width: 450px){
+/*    img{
+        display: none;
+    }*/
+    h1{
+        font-size: 1.5em;
+    }
+}
+
+footer {
+    background-color: black;
+    color: burlywood;
+    position: absolute;
+    width: 100%; height: 80px;
+    bottom: 0; left: 0; right: 0;
+    padding: 10px 0px 10px 0px;
+}
