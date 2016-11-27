@@ -1,4 +1,6 @@
 <?php
+/**Page de fin du jeu*/
+
 session_start();
 ?>
 <!doctype html>
@@ -13,9 +15,10 @@ session_start();
 </head>
 <body>
 <?php
+/*Vérifie si la partie est gagnée*/
 if($_GET['victory'] == "true")
 {
-    echo "<h2>Felicitations !</h2>";
+    echo '<h2>Felicitations</h2>';
 }
 else
 {
@@ -26,9 +29,11 @@ else
 }
 
 echo '<p>Le mot était: ' . $_SESSION['word'] . '</p>';
+
 ?>
-<form action="newgame.php" method="link">
+</body>
+<form action="newgame.php"> <!--Method Link ???-->
     <input type="submit" value="Nouvelle partie"/>
 </form>
-</body>
+
 </html>

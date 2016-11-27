@@ -1,4 +1,6 @@
 <?php
+/**Page principale (page sur laquelle se trouve le jeu)
+ */
 session_start();
 ?>
 
@@ -19,7 +21,7 @@ session_start();
 <h1>Jeu du Pendu</h1>
 <div id="wordToFind">
     <?php
-
+    /*Crée l'affichage du mot à trouver (avec tiret ou lettre trouvée)*/
     foreach (str_split($_SESSION['word']) as $item)
     {
         if (in_array($item,$_SESSION['usedLetters']))
@@ -35,6 +37,7 @@ session_start();
 </div>
 
 <?php
+/*Affiche le nombre d'essais restant*/
 if($_SESSION['attempts']>1)
 {
     echo '<p>Essais restants: ' . $_SESSION['attempts'] . '</p>';
@@ -47,19 +50,21 @@ echo '<p>Lettres utilisées: ' . implode(" ",$_SESSION['usedLetters']) . '</p>';
 ?>
 
 <form action="main.php" method="post" name="my_form" id="my_form">
-    <select name="letters" id="letters" autofocus>
+    <select name="letters" id="letters" autofocus ">
         <?php
+        /*Crée la liste de lettres*/
         foreach ($_SESSION['letters'] as $item)
         {
             echo "<option value=$item>$item</option>";
         }
         ?>
     </select>
-    <input type="submit" value="OK"/>
+    <input type="submit" value="OK" id="test"/>
 </form>
 <div classe="image">
 
     <?php
+    /*Change d'image en fonction du nombre d'essais restants*/
     switch ($_SESSION['attempts']){
         case 6: echo '<img src="img/pendu0.png">';
             break;
@@ -81,8 +86,4 @@ echo '<p>Lettres utilisées: ' . implode(" ",$_SESSION['usedLetters']) . '</p>';
 </form>
 </div>
 </body>
-<!--<footer>
-Programmation: Miguel FORGET</br>
-Design: Karolijn VANWIJNSBERGHE
-</footer>-->
 </html>
